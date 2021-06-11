@@ -1,0 +1,24 @@
+name: praugas2
+description: UAB Praugas Web Site
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_linkify: ^5.0.2
+  get: ^4.1.4
+  google_fonts: ^2.1.0
+  url_launcher: ^6.0.6
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/img/logo.png
+    - assets/img/linkedin_logo_white.png
