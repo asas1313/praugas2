@@ -49,7 +49,7 @@ class HeaderDesktop extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    'Engineering & More',
+                    companySlogan,
                     style: TextStyle(fontSize: 14),
                   )
                 ],

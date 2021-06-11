@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 import 'pages/about_page.dart';
 import 'pages/clients_page.dart';
@@ -12,6 +13,7 @@ import 'pages/projects_page.dart';
 import 'pages/services_page.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(MyApp());
 }
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: mainThemeColor,
+        primaryColor: MAIN_THEME_COLOR,
         secondaryHeaderColor: secondaryThemeColor,
         textTheme: textTheme,
       ),

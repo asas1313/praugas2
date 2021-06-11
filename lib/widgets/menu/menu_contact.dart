@@ -30,7 +30,7 @@ class MenuContact extends StatelessWidget {
                   image: AssetImage('assets/img/linkedin_logo_white.png')),
             ),
           ),
-          SizedBox(width: 50),
+          SizedBox(width: 20),
         ],
       ),
     );

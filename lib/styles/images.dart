@@ -14,3 +14,5 @@ final linkedinLogo = BoxDecoration(
     alignment: Alignment.centerLeft,
   ),
 );
+
+final backgroundImg = 'assets/img/background.jpg';
