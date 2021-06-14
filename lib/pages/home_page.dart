@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/pages/contact_page.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:spaces/spaces.dart';
 
 class HomePage extends GetWidget {
   final GlobalKey _backgroundImageKey = GlobalKey();
@@ -70,7 +71,7 @@ class HomePage extends GetWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Spacer(),
+              Space.normal(),
               Text(
                 companyName.toUpperCase(),
                 textAlign: TextAlign.center,
@@ -80,7 +81,7 @@ class HomePage extends GetWidget {
                   fontWeight: FontWeight.w900,
                 ),
               ),
-              Spacer(),
+              Space.normal(),
               Text(
                 companySlogan,
                 style: const TextStyle(
@@ -88,7 +89,7 @@ class HomePage extends GetWidget {
                   fontSize: 24,
                 ),
               ),
-              Spacer(),
+              Space.normal(),
               AutoSizeText(
                 companyDescription,
                 textAlign: TextAlign.center,
@@ -99,7 +100,7 @@ class HomePage extends GetWidget {
                 maxLines: 10,
                 overflowReplacement: Text('Sorry text is too long'),
               ),
-              Spacer(),
+              Space.normal(),
             ],
           ),
         ),

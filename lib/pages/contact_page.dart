@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:praugas2/styles/colors.dart';
 import 'package:praugas2/styles/styles.dart';
 import 'package:praugas2/widgets/contactus_form/contactus_form.dart';
+import 'package:spaces/spaces.dart';
 
 class ContactPage extends GetWidget {
   @override
@@ -11,13 +12,15 @@ class ContactPage extends GetWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 50),
+                Space.semiBig(),
                 Text(
                   'CONTACT US',
                   textAlign: TextAlign.center,
@@ -27,7 +30,7 @@ class ContactPage extends GetWidget {
                     fontWeight: FontWeight.w900,
                   ),
                 ),
-                SizedBox(height: 30),
+                Space.normal(),
                 AutoSizeText(
                   '$companyAddress\n\n' +
                       '$contactEmail\n\n' +
@@ -42,11 +45,7 @@ class ContactPage extends GetWidget {
                 ),
               ],
             ),
-            Column(
-              children: [
-                ContactUsForm(),
-              ],
-            ),
+            ContactUsForm(),
           ],
         ),
       );
