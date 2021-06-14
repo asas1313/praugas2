@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
 
 class HeaderMobile extends StatelessWidget {
@@ -14,42 +15,57 @@ class HeaderMobile extends StatelessWidget {
               alignment: Alignment.center,
               constraints: BoxConstraints.loose(Size.fromHeight(70)),
               height: 120,
-              child: Icon(Icons.menu),
+              child: IconButton(
+                icon: Icon(
+                  Icons.menu,
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              ),
             ),
           ),
           Flexible(
-            flex: 5,
+            flex: 6,
             child: Container(
               alignment: Alignment.centerLeft,
               height: 120,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    companyName.toUpperCase(),
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w900,
+                  TextButton(
+                    onPressed: () => Get.toNamed('/'),
+                    child: Text(
+                      companyName.toUpperCase(),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
-                    'Engineering & More',
-                    style: TextStyle(fontSize: 10),
+                    companySlogan,
+                    style: TextStyle(fontSize: 14),
                   )
                 ],
               ),
             ),
           ),
           Flexible(
-            flex: 5,
-            child: Container(
-              alignment: Alignment.centerLeft,
-              constraints: BoxConstraints.loose(Size.fromHeight(45)),
-              decoration: logo,
-              height: 120,
+            flex: 3,
+            child: TextButton(
+              onPressed: () => Get.toNamed('/'),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                constraints: BoxConstraints.loose(Size.fromHeight(120)),
+                decoration: logo,
+                height: 120,
+              ),
             ),
           ),
         ],
