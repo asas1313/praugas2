@@ -56,7 +56,7 @@ class Slide2 extends StatelessWidget {
                   '\u2022 Master-plan design of new plant or workshop (or adaptation of existing)\n' +
                       '\u2022 Prepare decision investment vs. improvement options\n' +
                       '\u2022 Purchasing and technical specifications\n' +
-                      '\u2022 Market tender, negotiation, contracting\n',
+                      '\u2022 Market tender, negotiation, contracting',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     color: Colors.black,

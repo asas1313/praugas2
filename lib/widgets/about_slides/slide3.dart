@@ -31,7 +31,7 @@ class Slide3 extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(bottom: 15),
                 child: Text(
-                  'Manufacturing improvements',
+                  'Business',
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 12,
@@ -53,10 +53,9 @@ class Slide3 extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(bottom: 15),
                 child: AutoSizeText(
-                  '\u2022 Master-plan design of new plant or workshop (or adaptation of existing)\n' +
-                      '\u2022 Prepare decision investment vs. improvement options\n' +
-                      '\u2022 Purchasing and technical specifications\n' +
-                      '\u2022 Market tender, negotiation, contracting\n',
+                  '\u2022 Sales development to French speaking countries\n' +
+                      '\u2022 Purchasing strategy and process (how to buy better)\n' +
+                      '\u2022 ERP deployment and optimization',
                   textAlign: TextAlign.left,
                   style: const TextStyle(
                     color: Colors.black,
