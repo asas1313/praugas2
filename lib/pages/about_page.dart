@@ -1,9 +1,109 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:praugas2/styles/styles.dart';
+import 'package:praugas2/widgets/about_slides/about_slider.dart';
+import 'package:spaces/spaces.dart';
 
-class AboutPage extends GetWidget {
+class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text('About page'));
+    return LayoutBuilder(builder: (context, constraints) {
+      return SingleChildScrollView(
+        child: Center(
+          child: SizedBox(
+            width: (constraints.maxWidth / 3) * 2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Space.normal(),
+                Text(
+                  companyName.toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: MAIN_THEME_COLOR,
+                    fontSize: 40,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+                Space.normal(),
+                Text(
+                  'Bringing Solutions for Success',
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                  ),
+                ),
+                Space.normal(),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: AutoSizeText(
+                    'Active in:',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                    maxLines: 1,
+                    overflowReplacement: Text('Sorry text is too long'),
+                  ),
+                ),
+                AutoSizeText(
+                  '\u2022 Manufacturing industry\n' +
+                      '\u2022 Food packaging\n' +
+                      '\u2022 Health care\n',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
+                  maxLines: 3,
+                  overflowReplacement: Text('Sorry text is too long'),
+                ),
+                Space.normal(),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: AutoSizeText(
+                    'Background:',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                    maxLines: 1,
+                    overflowReplacement: Text('Sorry text is too long'),
+                  ),
+                ),
+                Space.normal(),
+                AutoSizeText(
+                  'Engineer & manager, French, located in Vilnius with experience and proven success in:\n' +
+                      '1. international project & change management (corporate level)\n' +
+                      '2. manufacturing and industrial engineering\n' +
+                      '3. LEAN and CIP expertise\n' +
+                      '4. SAP MM key-user\n' +
+                      '5. indirect purchasing (services, investments, consumables,…)\n' +
+                      '6. process standardization (cross company and culture)\n' +
+                      '7. EFQM Excellence Model deployment (Prize winner 2011) efqm.org',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
+                  maxLines: 8,
+                  overflowReplacement: Text('Sorry text is too long'),
+                ),
+                Space.normal(),
+                AboutSlider(),
+                Space.normal(),
+              ],
+            ),
+          ),
+        ),
+      );
+    });
   }
 }

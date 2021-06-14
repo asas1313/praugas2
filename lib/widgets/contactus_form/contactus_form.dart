@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/colors.dart';
+import 'package:spaces/spaces.dart';
 
 class ContactUsForm extends StatelessWidget {
   final nameController = TextEditingController();
@@ -12,15 +13,16 @@ class ContactUsForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) => Container(
-        margin:
-            constraints.maxWidth < 601 ? EdgeInsets.all(0) : EdgeInsets.all(40),
+        margin: EdgeInsets.all(0),
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: constraints.maxWidth < 601
+              ? EdgeInsets.all(0)
+              : EdgeInsets.all(20),
           width: constraints.maxWidth < 601 ? Get.width : Get.width * 0.35,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 25),
+              Space.normal(),
               TextFormField(initialValue: 'Message Form', readOnly: true),
               TextFormField(
                 controller: nameController,
@@ -55,7 +57,7 @@ class ContactUsForm extends StatelessWidget {
                         TextStyle(color: secondaryThemeColor.withOpacity(0.5))),
                 style: TextStyle(color: secondaryThemeColor),
               ),
-              SizedBox(height: 25),
+              Space.normal(),
               ConstrainedBox(
                 constraints: BoxConstraints.tightFor(
                   width: 135,

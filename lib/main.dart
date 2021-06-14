@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:spaces/spaces.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'pages/about_page.dart';
@@ -21,11 +22,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'PRAUGAS',
       theme: ThemeData(
         primaryColor: MAIN_THEME_COLOR,
         secondaryHeaderColor: secondaryThemeColor,
         textTheme: textTheme,
+      ),
+      builder: (context, child) => Spacing(
+        dataBuilder: (context) {
+          final mediaQuery = MediaQuery.of(context);
+          if (mediaQuery.size.width > 500) {
+            return SpacingData.generate(30);
+          }
+          return SpacingData.generate(10);
+        },
+        child: child ?? SizedBox(),
       ),
       home: PageLayout(child: HomePage()),
       getPages: [
