@@ -9,13 +9,14 @@ import 'package:spaces/spaces.dart';
 class ContactPage extends GetWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return Container(
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
+    return Container(
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Flexible(
+            flex: 2,
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,10 +46,13 @@ class ContactPage extends GetWidget {
                 ),
               ],
             ),
-            ContactUsForm(),
-          ],
-        ),
-      );
-    });
+          ),
+          Flexible(
+            flex: 3,
+            child: ContactUsForm(),
+          ),
+        ],
+      ),
+    );
   }
 }

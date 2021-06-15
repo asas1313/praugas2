@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:spaces/spaces.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'menu_item.dart';
@@ -17,7 +18,7 @@ class MenuContact extends StatelessWidget {
             child: Text(contactEmail),
             onPressed: () => _getInTouch(),
           ),
-          SizedBox(width: 15),
+          Space.small(),
           MenuItem(
             child: SelectableText(contactPhone),
           ),
@@ -30,7 +31,7 @@ class MenuContact extends StatelessWidget {
                   image: AssetImage('assets/img/linkedin_logo_white.png')),
             ),
           ),
-          SizedBox(width: 20),
+          Space.small(),
         ],
       ),
     );
