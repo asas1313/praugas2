@@ -7,6 +7,7 @@ import 'package:spaces/spaces.dart';
 class Slide3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final spacing = Spacing.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -29,7 +30,7 @@ class Slide3 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.only(bottom: 15),
+                padding: spacing.insets.onlyBottom.semiSmall,
                 child: Text(
                   'Business',
                   style: const TextStyle(
@@ -39,7 +40,7 @@ class Slide3 extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 15),
+                padding: spacing.insets.onlyBottom.semiSmall,
                 child: Text(
                   'ADVISE & EXECUTION SERVICES',
                   textAlign: TextAlign.center,
@@ -51,7 +52,7 @@ class Slide3 extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 15),
+                padding: spacing.insets.onlyBottom.semiSmall,
                 child: AutoSizeText(
                   '\u2022 Sales development to French speaking countries\n' +
                       '\u2022 Purchasing strategy and process (how to buy better)\n' +

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/images.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:spaces/spaces.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HeaderDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final spacing = Spacing.of(context);
     return Container(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -17,7 +19,7 @@ class HeaderDesktop extends StatelessWidget {
               onPressed: () => Get.toNamed('/'),
               child: Container(
                 alignment: Alignment.centerLeft,
-                margin: EdgeInsets.only(left: 50),
+                margin: spacing.insets.onlyLeft.semiBig,
                 constraints: BoxConstraints.loose(Size.fromHeight(70)),
                 decoration: logo,
                 height: 120,

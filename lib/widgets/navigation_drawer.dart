@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:spaces/spaces.dart';
 
 import 'menu/menu_item.dart';
 
 class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final spacing = Spacing.of(context);
     return Container(
       child: Column(
         children: [
           Container(
             color: Color.fromRGBO(0, 0, 0, 0.75),
-            padding: const EdgeInsets.all(32),
+            padding: spacing.insets.all.big,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

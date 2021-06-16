@@ -12,13 +12,14 @@ class ContactUsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final spacing = Spacing.of(context);
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => Container(
-        margin: EdgeInsets.all(0),
+        margin: spacing.insets.all.extraSmall,
         child: Container(
           padding: sizingInformation.isMobile
-              ? EdgeInsets.all(0)
-              : EdgeInsets.all(20),
+              ? spacing.insets.all.extraSmall
+              : spacing.insets.all.big,
           width: sizingInformation.isMobile ? Get.width : Get.width * 0.35,
           child: Column(
             mainAxisSize: MainAxisSize.min,
