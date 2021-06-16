@@ -7,6 +7,7 @@ import 'package:spaces/spaces.dart';
 class Slide1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final spacing = Spacing.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -29,7 +30,7 @@ class Slide1 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: spacing.insets.onlyBottom.normal,
                 child: Text(
                   'Manufacturing improvements',
                   style: const TextStyle(
@@ -39,7 +40,7 @@ class Slide1 extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: spacing.insets.onlyBottom.normal,
                 child: Text(
                   'ADVISE & EXECUTION SERVICES',
                   textAlign: TextAlign.center,
@@ -51,7 +52,7 @@ class Slide1 extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: spacing.insets.onlyBottom.normal,
                 child: AutoSizeText(
                   'LEAN practice',
                   textAlign: TextAlign.left,
@@ -88,7 +89,7 @@ class Slide1 extends StatelessWidget {
                 overflowReplacement: Text('Sorry text is too long'),
               ),
               Padding(
-                padding: const EdgeInsets.all(5.0),
+                padding: spacing.insets.all.normal,
                 child: Center(
                   child: ConstrainedBox(
                     constraints: BoxConstraints.tightFor(

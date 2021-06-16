@@ -7,6 +7,7 @@ import 'package:spaces/spaces.dart';
 class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final spacing = Spacing.of(context);
     return LayoutBuilder(builder: (context, constraints) {
       return SingleChildScrollView(
         child: Center(
@@ -17,7 +18,7 @@ class AboutPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Space.normal(),
+                Space.big(),
                 Text(
                   companyName.toUpperCase(),
                   textAlign: TextAlign.center,
@@ -27,7 +28,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                   ),
                 ),
-                Space.normal(),
+                Space.big(),
                 Text(
                   'Bringing Solutions for Success',
                   style: const TextStyle(
@@ -35,9 +36,9 @@ class AboutPage extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                Space.normal(),
+                Space.big(),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: spacing.insets.all.small,
                   child: AutoSizeText(
                     'Active in:',
                     textAlign: TextAlign.center,
@@ -60,7 +61,7 @@ class AboutPage extends StatelessWidget {
                 ),
                 Space.normal(),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: spacing.insets.all.small,
                   child: AutoSizeText(
                     'Background:',
                     textAlign: TextAlign.center,
@@ -88,9 +89,8 @@ class AboutPage extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                Space.normal(),
                 AboutSlider(),
-                Space.normal(),
+                Space.big(),
               ],
             ),
           ),

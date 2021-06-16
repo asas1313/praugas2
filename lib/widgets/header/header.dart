@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:praugas2/widgets/menu/menu_browsing.dart';
 import 'package:praugas2/widgets/menu/menu_contact.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import 'header_desktop.dart';
 import 'header_mobile.dart';
@@ -8,8 +9,8 @@ import 'header_mobile.dart';
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth > 1000) {
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      if (sizingInformation.isDesktop) {
         return Column(
           children: [
             HeaderDesktop(),
@@ -20,14 +21,14 @@ class Header extends StatelessWidget {
                   child: MenuBrowsing(),
                 ),
                 Flexible(
-                  flex: 4,
+                  flex: 5,
                   child: MenuContact(),
                 )
               ],
             ),
           ],
         );
-      } else if (constraints.maxWidth > 600) {
+      } else if (sizingInformation.isTablet) {
         return Column(
           children: [
             MenuContact(),

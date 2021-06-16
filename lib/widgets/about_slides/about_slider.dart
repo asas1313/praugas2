@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:praugas2/widgets/about_slides/slide1.dart';
 import 'package:praugas2/widgets/about_slides/slide2.dart';
 import 'package:praugas2/widgets/about_slides/slide3.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class AboutSlider extends StatefulWidget {
   @override
@@ -19,12 +20,11 @@ class _AboutSliderState extends State<AboutSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => Container(
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) => Container(
         margin:
-            constraints.maxWidth < 801 ? EdgeInsets.all(0) : EdgeInsets.all(8),
+            sizingInformation.isMobile ? EdgeInsets.all(0) : EdgeInsets.all(8),
         child: Container(
-          width: constraints.maxWidth,
           child: Column(
             children: [
               CarouselSlider(

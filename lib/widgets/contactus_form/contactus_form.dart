@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/colors.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:spaces/spaces.dart';
 
 class ContactUsForm extends StatelessWidget {
@@ -11,14 +12,15 @@ class ContactUsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => Container(
-        margin: EdgeInsets.all(0),
+    final spacing = Spacing.of(context);
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) => Container(
+        margin: spacing.insets.all.extraSmall,
         child: Container(
-          padding: constraints.maxWidth < 601
-              ? EdgeInsets.all(0)
-              : EdgeInsets.all(20),
-          width: constraints.maxWidth < 601 ? Get.width : Get.width * 0.35,
+          padding: sizingInformation.isMobile
+              ? spacing.insets.all.extraSmall
+              : spacing.insets.all.big,
+          width: sizingInformation.isMobile ? Get.width : Get.width * 0.35,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

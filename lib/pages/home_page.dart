@@ -6,8 +6,6 @@ import 'package:praugas2/styles/styles.dart';
 import 'package:spaces/spaces.dart';
 
 class HomePage extends GetWidget {
-  final GlobalKey _backgroundImageKey = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,6 +28,7 @@ class HomePage extends GetWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context) {
+    final GlobalKey _backgroundImageKey = GlobalKey();
     return Flow(
       delegate: ParallaxFlowDelegate(
         scrollable: Scrollable.of(context)!,
