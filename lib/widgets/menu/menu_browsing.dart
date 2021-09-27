@@ -27,11 +27,12 @@ class MenuBrowsing extends StatelessWidget {
             onPressed: () => Get.toNamed('/services'),
           ),
           Space.small(),
+          /*
           MenuItem(
             child: Text('Projects'),
             onPressed: () => Get.toNamed('/projects'),
           ),
-          Space.small(),
+          Space.small(),*/
           MenuItem(
             child: Text('Contact'),
             onPressed: () => Get.toNamed('/contact'),
@@ -41,11 +42,11 @@ class MenuBrowsing extends StatelessWidget {
             child: Text('Clients'),
             onPressed: () => Get.toNamed('/clients'),
           ),
-          Space.small(),
+/*          Space.small(),
           MenuItem(
             child: Text('FAQ'),
             onPressed: () => Get.toNamed('/faq'),
-          ),
+          ),*/
         ],
       ),
     );

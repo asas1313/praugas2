@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:praugas2/styles/images.dart';
 import 'package:praugas2/styles/styles.dart';
 import 'package:spaces/spaces.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,12 +7,11 @@ import 'package:url_launcher/url_launcher.dart';
 class HeaderDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final spacing = Spacing.of(context);
     return Container(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Flexible(
+/*          Flexible(
             flex: 3,
             child: TextButton(
               onPressed: () => Get.toNamed('/'),
@@ -26,9 +24,10 @@ class HeaderDesktop extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 25),
+          SizedBox(width: 25),*/
+          Space.normal(),
           Flexible(
-            flex: 6,
+            flex: 9,
             child: Container(
               alignment: Alignment.centerLeft,
               height: 120,
@@ -42,7 +41,7 @@ class HeaderDesktop extends StatelessWidget {
                       companyName.toUpperCase(),
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 40,
+                        fontSize: 50,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -52,7 +51,7 @@ class HeaderDesktop extends StatelessWidget {
                   ),
                   Text(
                     companySlogan,
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(fontSize: 22),
                   )
                 ],
               ),

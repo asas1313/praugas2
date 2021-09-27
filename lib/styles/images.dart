@@ -15,7 +15,7 @@ final linkedinLogo = BoxDecoration(
   ),
 );
 
-final backgroundImg = 'assets/img/background.jpg';
+final backgroundImg = 'assets/img/background.png';
 
 final analyzingImg = 'assets/img/analyzing.jpg';
 
