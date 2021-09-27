@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/colors.dart';
@@ -22,7 +21,7 @@ class ContactPage extends GetWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Space.semiBig(),
-                Text(
+                SelectableText(
                   'CONTACT US',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
@@ -32,7 +31,7 @@ class ContactPage extends GetWidget {
                   ),
                 ),
                 Space.normal(),
-                AutoSizeText(
+                SelectableText(
                   '$companyAddress\n\n' +
                       '$contactEmail\n\n' +
                       '$contactPhone\n\n',
@@ -42,7 +41,6 @@ class ContactPage extends GetWidget {
                     fontSize: 16,
                   ),
                   maxLines: 7,
-                  overflowReplacement: Text('Sorry text is too long'),
                 ),
               ],
             ),
