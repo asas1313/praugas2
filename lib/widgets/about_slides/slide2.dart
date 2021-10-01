@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
@@ -53,7 +52,7 @@ class Slide2 extends StatelessWidget {
               ),
               Padding(
                 padding: spacing.insets.onlyBottom.semiSmall,
-                child: AutoSizeText(
+                child: Text(
                   '\u2022 Master-plan design of new plant or workshop (or adaptation of existing)\n' +
                       '\u2022 Prepare decision investment vs. improvement options\n' +
                       '\u2022 Purchasing and technical specifications\n' +
@@ -64,7 +63,6 @@ class Slide2 extends StatelessWidget {
                     fontSize: 12,
                   ),
                   maxLines: 6,
-                  overflowReplacement: Text('Sorry text is too long'),
                 ),
               ),
               ConstrainedBox(

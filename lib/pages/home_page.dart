@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/pages/contact_page.dart';
@@ -97,7 +96,7 @@ class HomePage extends GetWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              AutoSizeText(
+              Text(
                 companyDescription,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
@@ -105,7 +104,6 @@ class HomePage extends GetWidget {
                   fontSize: 24,
                 ),
                 maxLines: 10,
-                overflowReplacement: Text('Sorry text is too long'),
               ),
             ],
           ),

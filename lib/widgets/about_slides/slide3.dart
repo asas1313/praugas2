@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
@@ -53,7 +52,7 @@ class Slide3 extends StatelessWidget {
               ),
               Padding(
                 padding: spacing.insets.onlyBottom.semiSmall,
-                child: AutoSizeText(
+                child: Text(
                   '\u2022 Sales development to French speaking countries\n' +
                       '\u2022 Purchasing strategy and process (how to buy better)\n' +
                       '\u2022 ERP deployment and optimization',
@@ -63,7 +62,6 @@ class Slide3 extends StatelessWidget {
                     fontSize: 12,
                   ),
                   maxLines: 6,
-                  overflowReplacement: Text('Sorry text is too long'),
                 ),
               ),
               ConstrainedBox(

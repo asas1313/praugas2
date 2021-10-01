@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
@@ -53,7 +52,7 @@ class Slide1 extends StatelessWidget {
               ),
               Padding(
                 padding: spacing.insets.onlyBottom.normal,
-                child: AutoSizeText(
+                child: Text(
                   'LEAN practice',
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -63,7 +62,7 @@ class Slide1 extends StatelessWidget {
                   ),
                 ),
               ),
-              AutoSizeText(
+              Text(
                 '\u2022 SMED learning by doing - 30% to 90% decrease of equipment change-over time\n' +
                     '\u2022 5S make a better and safer workplace, 1 st results in one day\n' +
                     '\u2022 Workflow with value stream mapping - workshop layout (re)design  Stock improvement data analyses, MRP, kanban)',
@@ -73,9 +72,8 @@ class Slide1 extends StatelessWidget {
                   fontSize: 12,
                 ),
                 maxLines: 5,
-                overflowReplacement: Text('Sorry text is too long'),
               ),
-              AutoSizeText(
+              Text(
                 'Process expertise focusing on added value and eliminate hidden waste, bottleneck, ...\n' +
                     'Quality and productivity analysis and solutions\n' +
                     'Continuous improvement deployment (Kaizen, 5 why,…)',
@@ -86,7 +84,6 @@ class Slide1 extends StatelessWidget {
                   fontSize: 12,
                 ),
                 maxLines: 5,
-                overflowReplacement: Text('Sorry text is too long'),
               ),
               Padding(
                 padding: spacing.insets.all.normal,
