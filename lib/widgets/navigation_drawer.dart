@@ -31,12 +31,12 @@ class NavigationDrawer extends StatelessWidget {
                 MenuItem(
                   child: Text('Services'),
                   onPressed: () => Get.toNamed('/services'),
-                ),
+                ),/*
                 SizedBox(height: 15),
                 MenuItem(
                   child: Text('Projects'),
                   onPressed: () => Get.toNamed('/projects'),
-                ),
+                ),*/
                 SizedBox(height: 15),
                 MenuItem(
                   child: Text('Contact'),
@@ -46,12 +46,12 @@ class NavigationDrawer extends StatelessWidget {
                 MenuItem(
                   child: Text('Clients'),
                   onPressed: () => Get.toNamed('/clients'),
-                ),
+                ),/*
                 SizedBox(height: 15),
                 MenuItem(
                   child: Text('FAQ'),
                   onPressed: () => Get.toNamed('/faq'),
-                ),
+                ),*/
               ],
             ),
           ),
