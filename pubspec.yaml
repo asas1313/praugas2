@@ -11,11 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  auto_size_text_pk: ^3.0.0
   carousel_slider: ^4.0.0
   flutter_linkify: ^5.0.2
   get: ^4.3.8
   google_fonts: ^2.1.0
   responsive_builder: ^0.4.1
+  seo_renderer: ^0.2.0
   spaces: ^0.5.0
   url_launcher: ^6.0.12
   url_strategy: ^0.2.0
@@ -25,7 +27,6 @@ flutter:
 
   assets:
     - assets/img/dreamstime_xxl_97226055.jpg
-    - assets/img/logo.png
     - assets/img/linkedin_logo_white.png
     - assets/img/analyzing.jpg
     - assets/img/planning.jpg

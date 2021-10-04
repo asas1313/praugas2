@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:praugas2/styles/styles.dart';
+import 'package:praugas2/widgets/logo/logo.dart';
 
 class HeaderMobile extends StatelessWidget {
   @override
@@ -10,11 +10,11 @@ class HeaderMobile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Flexible(
-            flex: 2,
+            flex: 1,
             child: Container(
               alignment: Alignment.center,
-              constraints: BoxConstraints.loose(Size.fromHeight(70)),
-              height: 120,
+              constraints: BoxConstraints.loose(Size.fromHeight(80)),
+              height: 80,
               child: IconButton(
                 icon: Icon(
                   Icons.menu,
@@ -26,46 +26,10 @@ class HeaderMobile extends StatelessWidget {
             ),
           ),
           Flexible(
-            flex: 6,
-            child: Container(
-              alignment: Alignment.centerLeft,
-              height: 120,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextButton(
-                    onPressed: () => Get.toNamed('/'),
-                    child: Text(
-                      companyName.toUpperCase(),
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    companySlogan,
-                    style: TextStyle(fontSize: 14),
-                  )
-                ],
-              ),
-            ),
-          ),
-          Flexible(
-            flex: 3,
+            flex: 5,
             child: TextButton(
               onPressed: () => Get.toNamed('/'),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                constraints: BoxConstraints.loose(Size.fromHeight(120)),
-                decoration: logo,
-                height: 120,
-              ),
+              child: Logo(),
             ),
           ),
         ],

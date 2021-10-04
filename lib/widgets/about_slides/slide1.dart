@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:praugas2/widgets/logo/logo.dart';
 import 'package:spaces/spaces.dart';
 
 class Slide1 extends StatelessWidget {
@@ -14,44 +15,25 @@ class Slide1 extends StatelessWidget {
           flex: 2,
           child: TextButton(
             onPressed: () => Get.toNamed('/'),
-            child: Container(
-              alignment: Alignment.center,
-              constraints: BoxConstraints.loose(Size.fromHeight(200)),
-              decoration: logo,
-            ),
+            child: Logo(),
           ),
         ),
         Space.small(),
         Flexible(
-          flex: 6,
+          flex: 5,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: spacing.insets.onlyBottom.normal,
-                child: Text(
-                  'Manufacturing improvements',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                  ),
+              Text(
+                'Manufacturing improvements',
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 12,
                 ),
               ),
               Padding(
-                padding: spacing.insets.onlyBottom.normal,
-                child: Text(
-                  'ADVISE & EXECUTION SERVICES',
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: MAIN_THEME_COLOR,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: spacing.insets.onlyBottom.normal,
+                padding: spacing.insets.onlyBottom.small,
                 child: Text(
                   'LEAN practice',
                   textAlign: TextAlign.left,
@@ -69,7 +51,7 @@ class Slide1 extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 12,
+                  fontSize: 11,
                 ),
                 maxLines: 5,
               ),
@@ -81,7 +63,7 @@ class Slide1 extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontSize: 12,
+                  fontSize: 11,
                 ),
                 maxLines: 5,
               ),

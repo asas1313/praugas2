@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:praugas2/widgets/logo/logo.dart';
 import 'package:spaces/spaces.dart';
 
 class Slide3 extends StatelessWidget {
@@ -14,11 +15,7 @@ class Slide3 extends StatelessWidget {
           flex: 2,
           child: TextButton(
             onPressed: () => Get.toNamed('/'),
-            child: Container(
-              alignment: Alignment.center,
-              constraints: BoxConstraints.loose(Size.fromHeight(200)),
-              decoration: logo,
-            ),
+            child: Logo(),
           ),
         ),
         Space.small(),
@@ -35,18 +32,6 @@ class Slide3 extends StatelessWidget {
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 12,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: spacing.insets.onlyBottom.semiSmall,
-                child: Text(
-                  'ADVISE & EXECUTION SERVICES',
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: MAIN_THEME_COLOR,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w900,
                   ),
                 ),
               ),

@@ -1,13 +1,12 @@
+import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:praugas2/pages/contact_page.dart';
 import 'package:praugas2/styles/styles.dart';
-import 'package:spaces/spaces.dart';
+import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
 
 class HomePage extends GetWidget {
   @override
   Widget build(BuildContext context) {
-    final spacing = Spacing.of(context);
     return Container(
       child: Column(
         children: [
@@ -31,41 +30,6 @@ class HomePage extends GetWidget {
               ),
             ),
           ),
-          Container(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Space.normal(),
-                Flexible(
-                  flex: 9,
-                  child: Text(
-                    'Consultancy services',
-                    style: TextStyle(
-                      color: MAIN_THEME_COLOR,
-                      fontSize: 50,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 25),
-                Flexible(
-                  flex: 3,
-                  child: TextButton(
-                    onPressed: () => Get.toNamed('/'),
-                    child: Container(
-                      alignment: Alignment.centerLeft,
-                      margin: spacing.insets.onlyLeft.semiBig,
-                      constraints: BoxConstraints.loose(Size.fromHeight(70)),
-                      decoration: logo,
-                      height: 120,
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-          ContactPage(),
         ],
       ),
     );
@@ -96,14 +60,16 @@ class HomePage extends GetWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                companyDescription,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+              TextRenderer(
+                text: AutoSizeText(
+                  companyDescription,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 40,
+                  ),
+                  maxLines: 10,
                 ),
-                maxLines: 10,
               ),
             ],
           ),

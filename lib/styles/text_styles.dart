@@ -10,7 +10,7 @@ final companyName = 'Praugas';
 final companySlogan = 'Engineering & More';
 final companyDescription =
     'Praugas is a Lithuanian based Strategy Consulting Firm that has been delivering solutions to clients since 2020. Praugas offers professional consulting services that are completely customizable for your business.\n\n' +
-        'With know-how in engineering, LEAN, CIP, manufacturing, purchasing, international project management and EFQM excellence model. Praugas support your growth and development.\n\n' +
+        'With know-how in engineering, LEAN, CIP, manufacturing, purchasing, international project management, EFQM excellence model and Praugas support your growth and development.\n\n' +
         'Contact me to discuss about your wish - 45mn free of charge.\n\n' +
         'Get in touch now.';
 final companyAddress = 'Gervuogių g. 16-18, LT-10103 Vilnius';

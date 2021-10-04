@@ -12,7 +12,7 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-        color: footerColor,
+        color: FOOTER_COLOR,
       ),
       Container(
         color: MAIN_THEME_COLOR,

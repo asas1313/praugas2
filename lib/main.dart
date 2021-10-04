@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:seo_renderer/helpers/utils.dart';
 import 'package:spaces/spaces.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -69,6 +70,7 @@ class MyApp extends StatelessWidget {
           page: () => PageLayout(child: FaqPage()),
         ),
       ],
+      navigatorObservers: <RouteObserver<ModalRoute<void>>>[routeObserver],
     );
   }
 }
