@@ -21,7 +21,7 @@ class Header extends StatelessWidget {
                   child: MenuBrowsing(),
                 ),
                 Flexible(
-                  flex: 5,
+                  flex: 6,
                   child: MenuContact(),
                 )
               ],

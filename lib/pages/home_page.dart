@@ -2,6 +2,7 @@ import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
 
 class HomePage extends GetWidget {
@@ -51,10 +52,15 @@ class HomePage extends GetWidget {
   }
 
   Widget _buildTitleAndSubtitle() {
-    return LayoutBuilder(builder: (context, constraints) {
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      final fontSize = sizingInformation.isMobile
+          ? 10.0
+          : sizingInformation.isTablet
+              ? 18.0
+              : 56.0;
       return Center(
         child: SizedBox(
-          width: (constraints.maxWidth / 3) * 2,
+          width: (sizingInformation.screenSize.width / 3) * 2,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -64,11 +70,12 @@ class HomePage extends GetWidget {
                 text: AutoSizeText(
                   companyDescription,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 40,
+                    fontSize: fontSize,
                   ),
                   maxLines: 10,
+                  minFontSize: 8,
                 ),
               ),
             ],
