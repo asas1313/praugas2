@@ -29,7 +29,9 @@ class HeaderMobile extends StatelessWidget {
             flex: 5,
             child: TextButton(
               onPressed: () => Get.toNamed('/'),
-              child: Logo(),
+              child: Logo(
+                isContactButtonVisible: true,
+              ),
             ),
           ),
         ],

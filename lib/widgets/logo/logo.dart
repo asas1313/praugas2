@@ -46,7 +46,7 @@ class Logo extends StatelessWidget {
                 children: [
                   TextRenderer(
                     text: Text(
-                      companyName.toUpperCase(),
+                      companyName,
                       style: TextStyle(
                         fontFamily: GoogleFonts.lato().fontFamily,
                         color: Colors.white,

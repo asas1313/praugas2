@@ -28,7 +28,7 @@ class MenuContact extends StatelessWidget {
               child: Image(
                   height: 14,
                   fit: BoxFit.contain,
-                  image: AssetImage('assets/img/linkedin_logo_white.png')),
+                  image: AssetImage(linkedinLogoImg)),
             ),
           ),
           Space.small(),
