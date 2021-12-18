@@ -55,18 +55,13 @@ class Logo extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 1,
-                    width: 180,
-                    color: SECOND_THEME_COLOR,
-                  ),
                   TextRenderer(
                     text: Text(
                       companySlogan,
                       style: TextStyle(
                         fontFamily: GoogleFonts.lato().fontFamily,
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 16,
                       ),
                     ),
                   ),
@@ -112,7 +107,7 @@ class Logo extends StatelessWidget {
           Visibility(
             visible: isContactButtonVisible,
             child: PositionedDirectional(
-              end: 10,
+              end: 0,
               top: 10,
               child: ContactButton(),
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
-import 'package:praugas2/widgets/logo/logo.dart';
+import 'package:praugas2/widgets/footer/footer.dart';
 import 'package:spaces/spaces.dart';
 
 class Slide2 extends StatelessWidget {
@@ -13,9 +13,9 @@ class Slide2 extends StatelessWidget {
       children: [
         Flexible(
           flex: 2,
-          child: TextButton(
-            onPressed: () => Get.toNamed('/'),
-            child: Logo(),
+          child: Image.asset(
+            'assets/img/Industrialization-dreamstime_xxl_82826964_edited.jpg',
+            fit: BoxFit.fitHeight,
           ),
         ),
         Space.small(),
@@ -29,10 +29,7 @@ class Slide2 extends StatelessWidget {
                 padding: spacing.insets.onlyBottom.semiSmall,
                 child: Text(
                   'Industrialization and investments',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                  ),
+                  style: textStyleSubtitle,
                 ),
               ),
               Padding(
@@ -43,24 +40,37 @@ class Slide2 extends StatelessWidget {
                       '\u2022 Purchasing and technical specifications\n' +
                       '\u2022 Market tender, negotiation, contracting',
                   textAlign: TextAlign.left,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                  ),
+                  style: textStyleNormal,
                   maxLines: 6,
                 ),
               ),
-              ConstrainedBox(
-                constraints: BoxConstraints.tightFor(
-                  width: 115,
-                  height: 30,
+              Padding(
+                padding: spacing.insets.all.normal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Center(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints.tightFor(
+                          width: 115,
+                          height: 30,
+                        ),
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: MAIN_THEME_COLOR),
+                            onPressed: () => Get.toNamed('/contact'),
+                            child: Text(
+                              'Get In Touch',
+                            )),
+                      ),
+                    ),
+                    LinkedInButton(
+                      address: linkedInAddress,
+                      height: 28,
+                      isColorWhite: false,
+                    ),
+                  ],
                 ),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: MAIN_THEME_COLOR),
-                    onPressed: () => Get.toNamed('/contact'),
-                    child: Text(
-                      'Get In Touch',
-                    )),
               )
             ],
           ),

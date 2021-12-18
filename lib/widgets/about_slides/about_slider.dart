@@ -30,7 +30,7 @@ class _AboutSliderState extends State<AboutSlider> {
               CarouselSlider(
                 items: slides,
                 options: CarouselOptions(
-                    height: 305,
+                    height: 350,
                     viewportFraction: 1,
                     autoPlay: true,
                     enlargeCenterPage: true,

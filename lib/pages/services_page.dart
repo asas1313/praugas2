@@ -16,15 +16,15 @@ class ServicesPage extends GetWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Space.big(),
+                Space.extraSmall(),
                 SelectableText(
                   'I can do for you ',
                   textAlign: TextAlign.center,
                   style: textStyleTitle,
                 ),
-                Space.big(),
+                Space.extraSmall(),
                 SelectableText(
-                  'Efficiency improvement',
+                  'Manufacturing improvement',
                   style: textStyleSubtitle,
                   textAlign: TextAlign.start,
                 ),
@@ -33,10 +33,13 @@ class ServicesPage extends GetWidget {
                       '\u2022 Change-over time - SMED analysis & training\n' +
                       '\u2022 Equipment downtime analyses and improvement\n' +
                       '\u2022 Quality and productivity improvement\n' +
-                      '\u2022 Capacity vs. demand: takt-time improvement\n',
-                  style: textStyleNormal,
+                      '\u2022 Capacity vs. demand: takt-time improvement\n' +
+                      '\u2022 Workflow and stock improvement (data analyses, MRP , kanban, value stream)\n' +
+                      '\u2022 ERP deployment and optimization\n' +
+                      '\u2022 Capacity vs. demand, flexible adaptation\n',
+                  style: textStyleNormalSmall,
                 ),
-                Space.semiSmall(),
+                Space.extraSmall(),
                 SelectableText(
                   'Process and equipment expertise',
                   style: textStyleSubtitle,
@@ -46,9 +49,9 @@ class ServicesPage extends GetWidget {
                   '\u2022 Machining, assembly, plastic molding, composite, stamping, blanking, debarring, cleansing, packaging, welding,...\n' +
                       '\u2022 Cycle time & throughput time improvement\n' +
                       '\u2022 Cooling fluid expertise\n',
-                  style: textStyleNormal,
+                  style: textStyleNormalSmall,
                 ),
-                Space.semiSmall(),
+                Space.extraSmall(),
                 SelectableText(
                   'Investment preparation',
                   style: textStyleSubtitle,
@@ -58,9 +61,9 @@ class ServicesPage extends GetWidget {
                   '\u2022 Analysis investment vs. improvement options\n' +
                       '\u2022 Purchasing and technical specifications\n' +
                       '\u2022 Market tender, negotiation, contracting\n',
-                  style: textStyleNormal,
+                  style: textStyleNormalSmall,
                 ),
-                Space.semiSmall(),
+                Space.extraSmall(),
                 SelectableText(
                   'LEAN and CIP expertise​',
                   style: textStyleSubtitle,
@@ -72,21 +75,9 @@ class ServicesPage extends GetWidget {
                       '\u2022 5S training and workshop\n' +
                       '\u2022 Continuous improvement process deployment\n' +
                       '\u2022 Functional value analysis\n',
-                  style: textStyleNormal,
+                  style: textStyleNormalSmall,
                 ),
-                Space.semiSmall(),
-                SelectableText(
-                  'Logistic',
-                  style: textStyleSubtitle,
-                  textAlign: TextAlign.start,
-                ),
-                SelectableText(
-                  '\u2022 Workflow and stock improvement (data analyses, MRP , kanban, value stream)\n' +
-                      '\u2022 ERP deployment and optimization\n' +
-                      '\u2022 Capacity vs. demand, flexible adaptation\n',
-                  style: textStyleNormal,
-                ),
-                Space.semiSmall(),
+                Space.extraSmall(),
                 SelectableText(
                   'Business',
                   style: textStyleSubtitle,
@@ -96,9 +87,9 @@ class ServicesPage extends GetWidget {
                   '\u2022 Sales development to/from French speaking countries\n' +
                       '\u2022 International relationship development\n' +
                       '\u2022 Purchasing strategy and process (how to buy, prepare RfQ and negotiation)\n',
-                  style: textStyleNormal,
+                  style: textStyleNormalSmall,
                 ),
-                Space.semiSmall(),
+                Space.extraSmall(),
                 SelectableText(
                   'EFQM',
                   style: textStyleSubtitle,
@@ -107,9 +98,9 @@ class ServicesPage extends GetWidget {
                 SelectableText(
                   '\u2022 Pre-acquisition industrial & organisational evaluation, excellence model deployment, management training, change management\n' +
                       '\u2022 Strategy and KPI design and rollout\n',
-                  style: textStyleNormal,
+                  style: textStyleNormalSmall,
                 ),
-                Space.normal(),
+                Space.extraSmall(),
               ],
             ),
           ),

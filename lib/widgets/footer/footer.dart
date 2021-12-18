@@ -128,8 +128,10 @@ class CompanyInfo extends StatelessWidget {
 class LinkedInButton extends StatelessWidget {
   final String address;
   final double height;
+  final bool isColorWhite;
 
-  const LinkedInButton({required this.address, this.height = 14});
+  const LinkedInButton(
+      {required this.address, this.height = 14, this.isColorWhite = true});
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +141,9 @@ class LinkedInButton extends StatelessWidget {
         child: Image(
             height: height,
             fit: BoxFit.contain,
-            image: AssetImage(linkedinLogoImg)),
+            image: isColorWhite
+                ? AssetImage(linkedinLogoWhiteImg)
+                : AssetImage(linkedinLogoImg)),
       ),
     );
   }

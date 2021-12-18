@@ -23,18 +23,6 @@ class AboutPage extends StatelessWidget {
                     text: AutoSizeText.rich(
                   TextSpan(text: '', style: textStyleNormal, children: [
                     TextSpan(
-                      text: 'Active in:\n\n',
-                      style: textStyleSubtitle,
-                    ),
-                    TextSpan(
-                      text: '\u2022 Manufacturing industry\n' +
-                          '\u2022 Food packaging\n' +
-                          '\u2022 Health care\n' +
-                          '\u2022 Cosmetic industry\n' +
-                          '\u2022 Furniture\n\n',
-                      style: textStyleNormal,
-                    ),
-                    TextSpan(
                       text: 'Background:\n\n',
                       style: textStyleSubtitle2,
                     ),

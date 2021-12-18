@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
 import 'package:spaces/spaces.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ClientsPage extends GetWidget {
   @override
@@ -23,22 +24,104 @@ class ClientsPage extends GetWidget {
                   style: textStyleTitle,
                 ),
                 Space.big(),
-                SelectableText(
-                  'ELMORIS',
-                  style: textStyleSubtitle,
-                  textAlign: TextAlign.start,
+                Row(
+                  children: [
+                    TextButton(
+                      onPressed: () async {
+                        var url = "https://www.ltt.lt/";
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Text(
+                        'LT Technologies',
+                        style: textStyleSubtitleLink,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    SelectableText(
+                      'Metalwork',
+                      style: textStyleSubtitle,
+                      textAlign: TextAlign.start,
+                    ),
+                  ],
                 ),
                 Space.semiSmall(),
-                SelectableText(
-                  'LT TEchnologies',
-                  style: textStyleSubtitle,
-                  textAlign: TextAlign.start,
+                Row(
+                  children: [
+                    TextButton(
+                      onPressed: () async {
+                        var url = "https://www.elmoris.lt/";
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Text(
+                        'Elmoris',
+                        style: textStyleSubtitleLink,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    SelectableText(
+                      'Food packaging',
+                      style: textStyleSubtitle,
+                      textAlign: TextAlign.start,
+                    ),
+                  ],
                 ),
                 Space.semiSmall(),
-                SelectableText(
-                  'InMedika Klinika',
-                  style: textStyleSubtitle,
-                  textAlign: TextAlign.start,
+                Row(
+                  children: [
+                    TextButton(
+                      onPressed: () async {
+                        var url = "https://www.inmedica.lt/lt";
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Text(
+                        'InMedica Clinic',
+                        style: textStyleSubtitleLink,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    SelectableText(
+                      'Health care',
+                      style: textStyleSubtitle,
+                      textAlign: TextAlign.start,
+                    ),
+                  ],
+                ),
+                Space.semiSmall(),
+                Row(
+                  children: [
+                    TextButton(
+                      onPressed: () async {
+                        var url = "https://manilla.lt/";
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Text(
+                        'Manilla',
+                        style: textStyleSubtitleLink,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    SelectableText(
+                      'Cosmetic',
+                      style: textStyleSubtitle,
+                      textAlign: TextAlign.start,
+                    ),
+                  ],
                 ),
                 Space.big(),
               ],
