@@ -4,35 +4,34 @@ import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
+import 'package:spaces/spaces.dart';
 
 class HomePage extends GetWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fitHeight,
-                alignment: Alignment.topCenter,
-                image: AssetImage(
-                  backgroundImg,
-                ),
-              ),
-            ),
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Stack(
-                children: [
-                  _buildGradient(),
-                  _buildTitleAndSubtitle(),
-                ],
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.topCenter,
+              image: AssetImage(
+                backgroundImg,
               ),
             ),
           ),
-        ],
-      ),
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Stack(
+              children: [
+                _buildGradient(),
+                _buildTitleAndSubtitle(),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -58,6 +57,11 @@ class HomePage extends GetWidget {
           : sizingInformation.isTablet
               ? 18.0
               : 56.0;
+      final fontSizeSmall = sizingInformation.isMobile
+          ? 8.0
+          : sizingInformation.isTablet
+              ? 12.0
+              : 24.0;
       return Center(
         child: SizedBox(
           width: (sizingInformation.screenSize.width / 3) * 2,
@@ -67,15 +71,31 @@ class HomePage extends GetWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TextRenderer(
-                text: AutoSizeText(
-                  companyDescription,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: fontSize,
-                  ),
-                  maxLines: 10,
-                  minFontSize: 8,
+                text: Column(
+                  children: [
+                    Space.big(),
+                    AutoSizeText(
+                      companyDescription,
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: fontSize,
+                      ),
+                      maxLines: 10,
+                      minFontSize: 8,
+                    ),
+                    Space.small(),
+                    AutoSizeText(
+                      contactMe,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: fontSizeSmall,
+                      ),
+                      maxLines: 10,
+                      minFontSize: 8,
+                    )
+                  ],
                 ),
               ),
             ],

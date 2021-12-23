@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
-import 'package:praugas2/widgets/footer/footer.dart';
 import 'package:spaces/spaces.dart';
 
 class Slide3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final spacing = Spacing.of(context);
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Flexible(
-          flex: 2,
+          flex: 5,
           child: Image.asset(
             'assets/img/Business-dreamstime_xxl_66132146_edited.jpg',
             fit: BoxFit.fitHeight,
@@ -20,7 +18,7 @@ class Slide3 extends StatelessWidget {
         ),
         Space.small(),
         Flexible(
-          flex: 5,
+          flex: 3,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,34 +41,6 @@ class Slide3 extends StatelessWidget {
                   maxLines: 6,
                 ),
               ),
-              Padding(
-                padding: spacing.insets.all.normal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Center(
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints.tightFor(
-                          width: 115,
-                          height: 30,
-                        ),
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                primary: MAIN_THEME_COLOR),
-                            onPressed: () => Get.toNamed('/contact'),
-                            child: Text(
-                              'Get In Touch',
-                            )),
-                      ),
-                    ),
-                    LinkedInButton(
-                      address: linkedInAddress,
-                      height: 28,
-                      isColorWhite: false,
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
         ),

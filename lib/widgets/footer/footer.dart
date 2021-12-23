@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:praugas2/styles/colors.dart';
 import 'package:praugas2/styles/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../linkedin_button.dart';
 
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
@@ -13,14 +14,31 @@ class Footer extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       return Column(mainAxisSize: MainAxisSize.min, children: [
         Container(
+          padding: EdgeInsets.symmetric(horizontal: 40),
           color: MAIN_THEME_COLOR,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CompanyInfo(),
-              Padding(
-                padding: const EdgeInsets.only(right: 80.0),
-                child: LinkedInButton(address: linkedInAddress, height: 34),
+              SelectableText(
+                companyNameUAB,
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+              SelectableText(
+                contactEmail,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
+              ),
+              SelectableText(
+                contactPhone,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),
@@ -80,77 +98,5 @@ class GetInTouch extends StatelessWidget {
     await canLaunch(_emailLaunchUri.toString())
         ? await launch(_emailLaunchUri.toString())
         : throw 'Could not launch $_emailLaunchUri';
-  }
-}
-
-class CompanyInfo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: EdgeInsets.only(left: 30),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 30),
-            SelectableText(
-              companyName,
-              style: TextStyle(
-                fontSize: 24,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(height: 30),
-            SelectableText(
-              companyAddress,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.white,
-              ),
-            ),
-            SelectableText(
-              contactPhone,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(height: 30),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class LinkedInButton extends StatelessWidget {
-  final String address;
-  final double height;
-  final bool isColorWhite;
-
-  const LinkedInButton(
-      {required this.address, this.height = 14, this.isColorWhite = true});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: TextButton(
-        onPressed: () => _openLinkedIn(address),
-        child: Image(
-            height: height,
-            fit: BoxFit.contain,
-            image: isColorWhite
-                ? AssetImage(linkedinLogoWhiteImg)
-                : AssetImage(linkedinLogoImg)),
-      ),
-    );
-  }
-
-  _openLinkedIn(String address) async {
-    await canLaunch(address)
-        ? await launch(address)
-        : throw 'Could not launch LinkedIn profile';
   }
 }

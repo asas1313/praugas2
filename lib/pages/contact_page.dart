@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:praugas2/styles/colors.dart';
 import 'package:praugas2/styles/styles.dart';
 import 'package:praugas2/widgets/contactus_form/contactus_form.dart';
 import 'package:spaces/spaces.dart';

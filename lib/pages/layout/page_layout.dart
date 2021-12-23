@@ -12,20 +12,25 @@ class PageLayout extends GetWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) => Scaffold(
-        drawer: sizingInformation.isMobile ? NavigationDrawer() : null,
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Header(),
-              child,
-              Footer(),
-            ],
+    return LayoutBuilder(builder: (context, constraints) {
+      return ResponsiveBuilder(
+        builder: (context, sizingInformation) => Scaffold(
+          drawer: sizingInformation.isMobile ? NavigationDrawer() : null,
+          backgroundColor: Colors.white,
+          body: Container(
+            width: constraints.maxWidth,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Header(),
+                  child,
+                  Footer(),
+                ],
+              ),
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

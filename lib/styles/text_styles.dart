@@ -7,13 +7,16 @@ import 'colors.dart';
 final textTheme = GoogleFonts.ralewayTextTheme(Get.textTheme);
 
 final companyName = 'Praugas';
+final companyNameUAB = 'Praugas UAB';
 final companySlogan = 'Engineering & More';
 final companyDescription =
-    'Praugas is a Lithuanian based Consulting Firm that has been delivering solutions to clients since 2020. Praugas offers professional consulting services customizable for your business.\n\n' +
-        'With know-how in engineering, LEAN, CIP, manufacturing, purchasing ERP, international project management and EFQM excellence model. Praugas supports your growth and development.\n\n' +
-        'Contact me to discuss about your wish - 45mn free of charge.';
-final companyAddress = 'Gervuogių g. 16-18, LT-10103 Vilnius';
-final contactEmail = 'f.pauma@praugas.eu';
+    'Praugas is a Lithuanian based Consulting Firm that delivers solutions to Clients since 2020.\n' +
+        'Praugas offers professional consulting services customizable for your business.\n\n' +
+        'With valuable know-how in engineering, LEAN, manufacturing, purchasing, ERP, international projects management, growth and development.';
+final contactMe =
+    'Contact me to discuss about your wish - 45mn free of charge.';
+final companyAddress = 'LT-Vilnius';
+final contactEmail = 'contact@praugas.eu';
 final linkedInAddress = 'http://www.linkedin.com/company/praugas';
 final contactPhone = '+370 674 58650';
 
@@ -28,13 +31,13 @@ final textStyleTitle = const TextStyle(
 
 final textStyleSubtitle = const TextStyle(
   color: Colors.black,
-  fontSize: 16,
+  fontSize: 24,
 );
 
 final textStyleSubtitleBold = const TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.black,
-  fontSize: 16,
+  fontSize: 24,
 );
 
 final textStyleSubtitleLink = const TextStyle(
@@ -44,16 +47,9 @@ final textStyleSubtitleLink = const TextStyle(
   fontSize: 16,
 );
 
-final textStyleSubtitle2 = const TextStyle(
-  decoration: TextDecoration.underline,
-  fontWeight: FontWeight.bold,
-  color: Colors.black,
-  fontSize: 16,
-);
-
 final textStyleNormal = const TextStyle(
   color: Colors.black,
-  fontSize: 14,
+  fontSize: 20,
 );
 
 final textStyleNormalSmall = const TextStyle(
