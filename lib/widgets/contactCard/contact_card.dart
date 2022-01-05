@@ -43,8 +43,7 @@ class ContactCard extends StatelessWidget {
     );
   }
 
-  Future<void> openLink(String link) async {
-    var url = "https://www.ltt.lt/";
+  Future<void> openLink(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
