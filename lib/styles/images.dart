@@ -14,4 +14,4 @@ final logoInMedicaImg = 'assets/img/logo-inMedica.png';
 
 final logoLTTImg = 'assets/img/logo-LTT.png';
 
-final logoManillaImg = 'assets/img/Logo-Manilla.png';
+final logoManillaImg = 'assets/img/Logo-Manilla-smaller.png';

@@ -27,15 +27,15 @@ class ContactCard extends StatelessWidget {
           child: GestureDetector(
             onTap: () => openLink(link),
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  Text(''),
+                  Image.asset(image),
                   Text(
                     text,
                     style: textStyleSubtitle,
                     textAlign: TextAlign.center,
                   ),
-                  Image.asset(image),
-                  Text(''),
                 ]),
           ),
         ),
