@@ -1,134 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:praugas2/styles/styles.dart';
+import 'package:praugas2/widgets/contactCard/contact_card.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:spaces/spaces.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ClientsPage extends GetWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return SingleChildScrollView(
-        child: Center(
-          child: SizedBox(
-            width: (constraints.maxWidth / 3) * 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Space.big(),
-                SelectableText(
-                  'Clients',
-                  textAlign: TextAlign.center,
-                  style: textStyleTitle,
-                ),
-                Space.big(),
-                Row(
-                  children: [
-                    TextButton(
-                      onPressed: () async {
-                        var url = "https://www.ltt.lt/";
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
-                      },
-                      child: Text(
-                        'LT Technologies',
-                        style: textStyleSubtitleLink,
-                        textAlign: TextAlign.start,
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      var crossAxisCardCount = sizingInformation.isDesktop ? 2 : 1;
+      return LayoutBuilder(builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: Center(
+            child: SizedBox(
+              width: (constraints.maxWidth / 3) * 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Space.big(),
+                  SelectableText(
+                    'Clients',
+                    textAlign: TextAlign.center,
+                    style: textStyleTitle,
+                  ),
+                  Space.big(),
+                  GridView(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: crossAxisCardCount,
+                      crossAxisSpacing: 5,
+                      mainAxisSpacing: 5,
+                      mainAxisExtent: 320,
+                    ),
+                    padding: EdgeInsets.all(10),
+                    shrinkWrap: true,
+                    children: [
+                      ContactCard(
+                        text: 'Metalwork',
+                        image: logoLTTImg,
+                        link: "https://www.ltt.lt/",
                       ),
-                    ),
-                    SelectableText(
-                      'Metalwork',
-                      style: textStyleSubtitle,
-                      textAlign: TextAlign.start,
-                    ),
-                  ],
-                ),
-                Space.semiSmall(),
-                Row(
-                  children: [
-                    TextButton(
-                      onPressed: () async {
-                        var url = "https://www.elmoris.lt/";
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
-                      },
-                      child: Text(
-                        'Elmoris',
-                        style: textStyleSubtitleLink,
-                        textAlign: TextAlign.start,
+                      ContactCard(
+                        text: 'Food packaging',
+                        image: logoElmorisImg,
+                        link: "https://www.elmoris.lt/",
                       ),
-                    ),
-                    SelectableText(
-                      'Food packaging',
-                      style: textStyleSubtitle,
-                      textAlign: TextAlign.start,
-                    ),
-                  ],
-                ),
-                Space.semiSmall(),
-                Row(
-                  children: [
-                    TextButton(
-                      onPressed: () async {
-                        var url = "https://www.inmedica.lt/lt";
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
-                      },
-                      child: Text(
-                        'InMedica Clinic',
-                        style: textStyleSubtitleLink,
-                        textAlign: TextAlign.start,
+                      ContactCard(
+                        text: 'Health care',
+                        image: logoInMedicaImg,
+                        link: "https://www.inmedica.lt/lt",
                       ),
-                    ),
-                    SelectableText(
-                      'Health care',
-                      style: textStyleSubtitle,
-                      textAlign: TextAlign.start,
-                    ),
-                  ],
-                ),
-                Space.semiSmall(),
-                Row(
-                  children: [
-                    TextButton(
-                      onPressed: () async {
-                        var url = "https://manilla.lt/";
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
-                      },
-                      child: Text(
-                        'Manilla',
-                        style: textStyleSubtitleLink,
-                        textAlign: TextAlign.start,
+                      ContactCard(
+                        text: 'Cosmetic',
+                        image: logoManillaImg,
+                        link: "https://manilla.lt/",
                       ),
-                    ),
-                    SelectableText(
-                      'Cosmetic',
-                      style: textStyleSubtitle,
-                      textAlign: TextAlign.start,
-                    ),
-                  ],
-                ),
-                Space.big(),
-              ],
+                    ],
+                  ),
+                  Space.big(),
+                ],
+              ),
             ),
           ),
-        ),
-      );
+        );
+      });
     });
   }
 }
